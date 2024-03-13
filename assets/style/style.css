@@ -1,3 +1,12 @@
+body{
+    background-color: rgba(47, 58, 95, 0.7);
+}
 
-
-
+.bd-background{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(8deg, rgba(62, 51, 116, 0.57) -154%, rgba(155, 144, 215, 0.62) 245%);
+}
