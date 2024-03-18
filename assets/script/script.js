@@ -1,1 +1,0 @@
-let dayliesContain = document.getElementsByClassName("daylies");

@@ -202,9 +202,10 @@ nav {
 }
 
 .daylies p {
+    width: 5%;
   text-align: center;
   color: white;
-  margin: 0;
+  margin: auto;
 }
 
 /* LANDRY */
