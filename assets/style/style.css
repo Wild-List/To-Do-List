@@ -1,56 +1,269 @@
-body{
-  background-color: rgba(47, 58, 95, 0.7);
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@100..900&family=Jua&display=swap");
+
+.flex {
+  display: flex;
 }
 
-.bd-background{
-  width: 100%;
-  height: 100vh;
+body {
+margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, rgb(60, 67, 92) 1%, #2f3a5f 71%);
+}
+
+.bd-background {
+    position: relative;
+  width: 98%;
+  height: 98vh;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
-  background-image: linear-gradient(8deg, rgba(62, 51, 116, 0.57) -154%, rgba(155, 144, 215, 0.62) 245%);
+  background-image: linear-gradient(
+    89deg,
+    rgba(62, 51, 116, 0.57) -154%,
+    rgba(155, 144, 215, 0.62) 245%
+  );
 }
 
+/* MEHDI */
+
+.list {
+  width: 90%;
+  margin: 10px auto 10px auto;
+  color: #e7e7e7;
+  font-family: "Andika", sans-serif;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px rgba(222, 243, 255, 0.2);
+  background-color: rgba(222, 243, 255, 0.1);
+}
+
+.list-header {
+  justify-content: space-between;
+}
+
+.list-title {
+  margin: 12px 16px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.edit-list {
+  margin: 12px 15px;
+  padding: 6px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgba(68, 94, 99, 0.57);
+  border: 0;
+  color: #e7e7e7;
+}
+
+.task {
+  width: 96%;
+  margin: 0 auto 7px auto;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25);
+  color: #e7e7e7;
+}
+
+.list .task:last-child {
+  margin-bottom: 12px;
+}
+
+.task input[type="checkbox"] {
+  flex: 1;
+  margin: auto;
+  margin-left: 3px;
+  height: 11px;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px 0 rgba(46, 46, 66, 0.08);
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+}
+
+.task-name {
+  flex: 8;
+  font-size: 12px;
+  margin-left: 3px;
+  line-height: 6px;
+}
+
+.task-date {
+  flex: 2;
+  font-size: 12px;
+  line-height: 6px;
+  text-align: center;
+}
+
+.low-priority {
+  background-color: rgba(17, 208, 13, 0.54);
+}
+
+.medium-priority {
+  background-color: rgba(255, 122, 0, 0.6);
+}
+
+.high-priority {
+  background-color: rgba(239, 27, 27, 0.6);
+}
+
+/* YASSINE */
+
+.online {
+  position: absolute;
+  right: 0;
+  margin-top: 18px;
+  margin-right: 15px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-left :nth-child(2) {
+  margin: 10px;
+}
+
+.nav-right img {
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 42px;
+  padding: 0;
+  background-color: rgba(43, 122, 168, 0.7);
+}
+
+.daylies {
+  width: 60%;
+  margin: auto;
+  padding: 5px 20px 0 20px;
+  border-radius: 15px;
+  border: solid 1px rgba(222, 243, 255, 0.2);
+  background-color: rgba(222, 243, 255, 0.1);
+}
+
+.progress-bar {
+  height: 11px;
+
+  border-radius: 30px;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: solid 1px rgba(104, 149, 104, 0.69);
+  background-color: #3d5559;
+}
+
+.progress {
+  width: 66%;
+  height: 11px;
+  border-radius: 30px;
+  background-color: rgba(104, 149, 104, 0.8);
+}
+
+.daylies ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.daylies ul li {
+  font-weight: 300;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-family: "Inter";
+}
+
+.daylies .active {
+  color: rgba(220, 220, 220, 0.29);
+  text-decoration-line: line-through;
+}
+
+.daylies h1 {
+  letter-spacing: 7px;
+  text-align: center;
+  color: white;
+  margin-bottom: 5px;
+  font-family: "Jua";
+  font-size: 22px;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.daylies p {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+/* LANDRY */
+
+#input-new-task::placeholder{
+    color: white;
+}
+
+.plus-icon{
+    -webkit-text-stroke: 1px white;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.container-new-task{
+    width: 90%;
+    margin: auto;
+    font-family: "Andika", sans-serif;
+}
 
 .btn-new-task {
-  width: 108px;
-  height: 40px;
-  margin: 10px auto 10px 20px;
-  padding: auto;
+    font-size: 13px;
+  color: white;
+  margin: 20px 0 15px 0;
+  padding: 13px;
   border: 0px;
   border-radius: 15px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
   background-color: rgba(68, 94, 99, 0.6);
-  }
+}
 
 .btn-new-task:hover {
   background-color: rgba(48, 65, 69, 0.6);
-  }
+}
 
 .btn-new-task:active {
   background-color: rgba(89, 115, 119, 0.6);
-  }
+}
 
 .new-task {
-  display: none;
-  width: 90%;
   min-width: 280px;
-  margin: auto;
+  margin: 20px auto 20px auto;
   border-radius: 15px;
   box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.25);
   background-color: rgba(68, 94, 99, 0.6);
 }
 
 .input-new-task {
+    color: white;
   background: transparent;
   border: none;
-  margin: 10px 0 0 10px
+  margin: 15px 0 0 15px;
 }
 
 .line {
   width: 90%;
-  height: 1px;
-  margin: 5px auto 4px 5px;
+  height: 2px;
+  border: none;
+  margin: 5px auto auto auto;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -83,15 +296,17 @@ body{
 }
 
 #btn-validate {
-width: 45px;
-min-height: 25px;
-margin: 10px 3px 10px 3px;
-border-radius: 5px;
-border: solid 1px rgba(145, 255, 93, 0.27);
-background-color: #445e63;
+    color: white;
+  width: 45px;
+  min-height: 25px;
+  margin: 10px 3px 10px 3px;
+  border-radius: 5px;
+  border: solid 1px rgba(145, 255, 93, 0.27);
+  background-color: #445e63;
 }
 
 #btn-cancel {
+    color: white;
   width: 45px;
   min-height: 25px;
   margin: 10px 3px 10px 3px;
