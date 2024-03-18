@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wild-List</title>s
+        <title>Wild-List</title>
         <link rel="stylesheet" href="assets\style\style.css">
 
     </head>
@@ -41,9 +41,44 @@
 
                     <!-- Ajout de liste/tache -->
                 <div class="container-new-task">
-                        <button class="btn-new-task">+ New list</button>
+                        <button type="button" class="btn-new-task">+ New task</button>
                     <div class="new-task">
-                        <input value="Add new task" class="input-new-task">
+                        <input value="Add new task" id="input-new-task" class="input-new-task">
+                        <div class="line"></div>
+                            <form class="details-container">
+                                <div>
+                                <label for="category"></label>
+                                <select name="category" id="category" class="input-details">
+                                    <option value="">Category</option>
+                                </select>
+                                <button class="btn-details" id="btn-category"><span>Category</span>
+                                    <img src="assets\media\label_1f3f7-fe0f.png"/>
+                                </button>
+                                </div>
+                                <div>
+                                <label for="deadline"></label>
+                                <input name="deadline" type="date" id="deadline" class="input-details" value="">
+                                <button class="btn-details" id="btn-deadline"><span>Deadline</span>
+                                    <img src="assets\media\calendar_1f4c5.png"/>
+                                </button>
+                                </div>
+                                <div>
+                                <label for="priority"></label>
+                                <select name="priority" id="priority" class="input-details">
+                                    <option value="">--Priority--</option>
+                                    <option value="1">Low</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">High</option>
+                                </select>
+                                <button class="btn-details" id="btn-priority"><span>Priority</span>
+                                    <img src="assets\media\warning_26a0-fe0f.png"/>
+                                </button>
+                                </div>
+                                <div class="btn-validate-cancel">
+                                    <input type="submit" id="btn-validate" value="Add">
+                                    <button id="btn-cancel">X</button>
+                                </div>
+                            </form>
                     </div>
                 </div>
 
@@ -73,5 +108,6 @@
             </footer>
         </div>
         <script src="./assets/script/script.js"></script>
+        <script src="./assets/script/calls.js"></script>
     </body>
 </html>

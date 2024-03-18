@@ -1,0 +1,4 @@
+addNewTaskTextarea()
+buttonDetailsTask()
+buttonCancel();
+displayNewTaskCreator();
