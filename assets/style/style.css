@@ -268,7 +268,7 @@ nav {
 }
 
 .input-details {
-  display: none;
+  display: block;
 }
 
 .details-container {
@@ -305,6 +305,14 @@ nav {
   background-color: #445e63;
 }
 
+#btn-validate:hover {
+    background-color: #2b4831;
+}
+
+#btn-validate:active {
+    background-color: #1f3624;
+}
+
 #btn-cancel {
     color: white;
   width: 45px;
@@ -313,6 +321,14 @@ nav {
   border-radius: 5px;
   border: solid 1px rgba(255, 54, 54, 0.42);
   background-color: rgba(167, 0, 0, 0.57);
+}
+
+#btn-cancel:active {
+    background-color: rgba(89, 0, 0, 0.57);
+}
+
+#btn-cancel:hover {
+    background-color: rgba(117, 0, 0, 0.719);
 }
 
 .btn-validate-cancel {
