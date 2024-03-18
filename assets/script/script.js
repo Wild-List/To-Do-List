@@ -17,58 +17,62 @@ function addNewTaskTextarea() {
     });
 }
 
-function buttonDetailsTask() {
-    // For each button, their input function is activated when clicked and they are hidden
-    document.getElementById("btn-category").addEventListener("click", function() {
+function buttonDetailsTask(buttonId, inputId) {
+    // Display of details buttons
+    document.getElementById(buttonId).addEventListener("click", function() {
         event.preventDefault();
-        document.getElementById("category").style.display = "inline-block";
-        document.getElementById("btn-category").style.display = "none";
-    });
-
-    document.getElementById("btn-deadline").addEventListener("click", function() {
-        event.preventDefault();
-        document.getElementById("deadline").style.display = "inline-block";
-        document.getElementById("btn-deadline").style.display = "none";
-    });
-
-    document.getElementById("btn-priority").addEventListener("click", function() {
-        event.preventDefault();
-        document.getElementById("priority").style.display = "inline-block";
-        document.getElementById("btn-priority").style.display = "none";
+        document.getElementById(inputId).style.display = "inline-block";
+        document.getElementById(buttonId).style.display = "none";
     });
 }
 
+
 function buttonCancel() {
-    var category = document.getElementById("category");
-    var deadline = document.getElementById("deadline");
-    var priority = document.getElementById("priority");
     document.getElementById("btn-cancel").addEventListener("click", function() {
         event.preventDefault();
         // Erase textarea input
         document.getElementById("input-new-task").value = "Add new task";
         // Revert the buttons back to their original state
-        category.style.display = "none";
-        document.getElementById("btn-category").style.display = "inline-block";
-        deadline.style.display = "none";
-        document.getElementById("btn-deadline").style.display = "inline-block";
-        priority.style.display = "none";
-        document.getElementById("btn-priority").style.display = "inline-block";
-        // Erase input values
-        category.value = "";
-        deadline.value = "";
-        priority.value = "";
-    })
+        ["category", "deadline", "priority"].forEach(item => {
+            document.getElementById(item).style.display = "none";
+            document.getElementById("btn-" + item).style.display = "inline-block";
+            document.getElementById(item).value = "";
+        });
+        document.querySelector(".new-task").style.display = "none";
+        document.querySelector(".btn-new-task").style.display = "block";
+    });
 }
 
 function displayNewTaskCreator() {
-    var newTaskButton = document.querySelector(".btn-new-task")
-    var newTaskCreator = document.querySelector(".new-task")
+    let newTaskButton = document.querySelector(".btn-new-task");
+    let newTaskCreator = document.querySelector(".new-task");
     newTaskButton.addEventListener("click", function() {
-        //Hide new task button and display creation menu
         event.preventDefault();
+        // Hide new task button and display creation menu
         newTaskCreator.style.display = "block";
         newTaskButton.style.display = "none";
-        })
+    });
+}
+
+function getDetailsValue() {
+    // Get input values
+    let inputDetails = ["input-new-task", "category", "deadline", "priority"];
+    let getDetails = [];
+    for (let i = 0; i < inputDetails.length; ++i) {
+    getDetails[i] = document.getElementById(inputDetails[i]).value;
     }
+    console.log(getDetails);
+}
+
+function buttonAdd() {
+    let addButton = document.getElementById("btn-validate");
+    addButton.addEventListener("click", function() {
+        event.preventDefault();
+        getDetailsValue();
+    });
+}
 
 
+function newList() {
+
+}
