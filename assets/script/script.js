@@ -18,15 +18,8 @@ function switchDisplay(element) {
 };
 
 function switchClassVisible(element) {
-    let el = document.getElementById(element);
-    el.classList.toggle("visible");
-    console.log("change")
+    document.getElementById(element).classList.toggle("visible");
 };
-
-// btnCategory.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     switchClassVisible(btnCategory);
-// });
 
 function buttonDetailsTask(buttonId, inputId) {
     // Display of details buttons
@@ -77,7 +70,3 @@ addButton.addEventListener("click", (e) => {
     switchDisplay(newTaskButton);
     });
 
-
-function newList() {
-
-}
