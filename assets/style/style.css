@@ -268,7 +268,7 @@ nav {
 }
 
 .input-details {
-  display: block;
+  display: none;
 }
 
 .details-container {
@@ -287,12 +287,20 @@ nav {
   background-color: rgba(220, 220, 220, 0.38);
 }
 
+.btn-details:hover {
+  background-color: rgba(186, 186, 186, 0.38);
+}
+
 .btn-details span {
   display: none;
 }
 
 .btn-details img {
   height: 16px;
+}
+
+.visible {
+  display: block;
 }
 
 #btn-validate {

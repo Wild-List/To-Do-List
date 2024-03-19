@@ -5,44 +5,43 @@ newTaskCreator.hidden = true;
 let inputDetails = ["input-new-task", "category", "deadline", "priority"];
 let getDetails = {};
 let addButton = document.getElementById("btn-validate");
-let detailsClass = document.querySelectorAll(".input-details");
+let category = document.getElementById("category");
+let deadline = document.getElementById("dealine");
+let priority = document.getElementById("priority");
+let btnCategory = document.getElementById("btn-category");
+let btnDeadline = document.getElementById("btn-dealine");
+let btnPriority = document.getElementById("btn-priority");
 
 
 function switchDisplay(element) {
-    element.hidden = !element.hidden
+    element.hidden = !element.hidden;
+};
+
+function switchClassVisible(element) {
+    let el = document.getElementById(element);
+    el.classList.toggle("visible");
+    console.log("change")
+};
+
+// btnCategory.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     switchClassVisible(btnCategory);
+// });
+
+function buttonDetailsTask(buttonId, inputId) {
+    // Display of details buttons
+    document.getElementById(buttonId).addEventListener("click", (e) => {
+        e.preventDefault();
+        switchClassVisible(buttonId);
+        switchClassVisible(inputId);
+    });
 }
 
-
-    // Event listener for when the textarea is focused
-    inputTextarea.addEventListener("focus", (e) => {
-        // Clear the textarea's value
-        if (inputTextarea.value === "Add new task") {
-            inputTextarea.value = "";
-        }
-    });
-
-    // Event listener for when the textarea loses focus
-    inputTextarea.addEventListener("blur", (e) => {
-        // Restore the textarea's value if it's empty
-        if (inputTextarea.value === "") {
-            inputTextarea.value = "Add new task";
-        }
-    });
-
-
-// function buttonDetailsTask(buttonId, inputId) {
-//     // Display of details buttons
-//     document.getElementById(buttonId).addEventListener("click", (e) => {
-//         e.preventDefault();
-//         document.getElementById(inputId).hidden = false;
-//         document.getElementById(buttonId).hidden = true;
-//     });
-// }
 
 document.getElementById("btn-cancel").addEventListener("click", (e) => {
     e.preventDefault();
     // Erase textarea input
-    document.getElementById("input-new-task").value = "Add new task";
+    document.getElementById("input-new-task").value = "";
     // Revert the buttons back to their original state
     ["category", "deadline", "priority"].forEach(item => {
         document.getElementById(item).style.display = "none";
@@ -74,6 +73,8 @@ function getDetailsValue() {
 addButton.addEventListener("click", (e) => {
     e.preventDefault();
     getDetailsValue();
+    switchDisplay(newTaskCreator);
+    switchDisplay(newTaskButton);
     });
 
 
