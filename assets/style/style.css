@@ -15,7 +15,6 @@ body {
 .bd-background {
     position: relative;
   width: 98%;
-  height: 98vh;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
