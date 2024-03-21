@@ -35,12 +35,13 @@
           <div class="progress-bar">
             <div class="progress"></div>
           </div>
-          <ul>
-            <li>go for a walk</li>
-            <li class="active">contact a friend</li>
-            <li class="active">medidate</li>
+          <ul class="daylies-task">
+            <li class="daylies-toggle">go for a walk</li>
+            <li class="daylies-toggle">contact a friend</li>
+            <li class="daylies-toggle">medidate</li>
           </ul>
-          <p><i class="fa-solid fa-chevron-up"></i></p>
+         <p class="toggle"><i class="fa-solid fa-chevron-up icon-daylies"></i></p>
+          <!-- <p><i class="fa-solid fa-chevron-up icon-daylies"></i></p> -->
         </div>
 
         <!-- Ajout de liste/tache -->
@@ -56,12 +57,13 @@
             <form class="details-container">
               <div>
                 <label for="category"></label>
-                <select name="category" id="category" class="input-details">
+                <input type="text" id="category" class="input-details" list="datalist" hidden/>
+                <datalist id="datalist">
                   <option value="">Category</option>
-                </select>
+                </datalist>
                 <button class="btn-details" id="btn-category">
-                  <span>Category</span>
-                  <img src="assets\media\label_1f3f7-fe0f.png"/>
+                  <span hidden>Category</span>
+                  <img src="assets\media\label_1f3f7-fe0f.png" />
                 </button>
               </div>
               <div>
@@ -72,27 +74,28 @@
                   id="deadline"
                   class="input-details"
                   value=""
+      
                 />
                 <button class="btn-details" id="btn-deadline">
-                  <span>Deadline</span>
+                  <span hidden>Deadline</span>
                   <img src="assets\media\calendar_1f4c5.png" />
                 </button>
               </div>
               <div>
                 <label for="priority"></label>
-                <select name="priority" id="priority" class="input-details">
-                  <option value="">--Priority--</option>
-                  <option value="1">Low</option>
-                  <option value="2">Medium</option>
-                  <option value="3">High</option>
+                <select name="priority" id="priority" class="input-details" >
+                  <option value="">Priority</option>
+                  <option value=low-priority>Low</option>
+                  <option value=medium-priority>Medium</option>
+                  <option value=high-priority>High</option>
                 </select>
                 <button class="btn-details" id="btn-priority">
-                  <span>Priority</span>
+                  <span hidden>Priority</span>
                   <img src="assets\media\warning_26a0-fe0f.png" />
                 </button>
               </div>
               <div class="btn-validate-cancel">
-                <input type="submit" id="btn-validate" value="Add" />
+                <input type="submit" id="btn-validate" value="Add" title="" disabled/>
                 <button id="btn-cancel">X</button>
               </div>
             </form>
@@ -102,27 +105,59 @@
         <!-- Container listes -->
         <div class="task-list">
           <!-- Liste et tache -->
-          <div class="list">
+          <!-- <div class="list">
             <div class="list-header flex">
               <h3 class="list-title">Ménage</h3>
               <button class="edit-list">···</button>
+              <div class="list-menu" hidden>
+                <ul class="list-menu-option flex">
+                  <li class="list-menu-option-rename">Renommer</li>
+                  <li class="list-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
             <div class="task medium-priority flex">
               <input type="checkbox" />
               <p class="task-name">Faire la vaisselle</p>
               <p class="task-date">28/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu">
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+                <ul class="priority-option">
+                  <li>Basse</li>
+                  <li>Haute</li>
+                  <li>Moyenne</li>
+                </ul>
+              </div>
             </div>
             <div class="task low-priority flex">
               <input type="checkbox" />
               <p class="task-name">Arroser les plantes</p>
               <p class="task-date">22/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu" hidden>
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
             <div class="task high-priority flex">
               <input type="checkbox" />
               <p class="task-name">Laver la voiture</p>
               <p class="task-date">17/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu" hidden>
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </main>
 
