@@ -38,19 +38,12 @@ let lists = [{
         priority: "low-priority",
         date: "09/04"
     }]
-},{
-    title: "Test",
-    tasks: [{
-        title: "Test 1",
-        priority: "low-priority",
-        date: "20/03"
-    }]
 }];
 
 displayList(lists)
 
 function displayList(listOfList){
-    taskList.innerHTML = "";
+    taskList.innerHTML = ""
 
     for(list of listOfList){
       let newList = document.createElement("div");
@@ -75,7 +68,6 @@ function displayList(listOfList){
       listTitle.setAttribute("disabled", "");
       listNumber++;
 
-
       listTitle.value = list.title;
       listBtn.textContent = "···";
       newListMenuRename.textContent = "Rename";
@@ -91,7 +83,11 @@ function displayList(listOfList){
       newListMenu.appendChild(newListMenuOption);
       newListMenuOption.appendChild(newListMenuRename);
       newListMenuOption.appendChild(newListMenuDelete);
-      datalistOptions.appendChild(categoryOption);
+      
+      if(!datalistOptions.querySelector(`option[value="${list.title}"]`)){
+        console.log("blabla")
+        datalistOptions.appendChild(categoryOption);
+    }
 
       listBtn.addEventListener('click', () => {
         listBtn.hidden = true;
