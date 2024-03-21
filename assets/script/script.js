@@ -39,6 +39,7 @@ function resetDisplay() {
     };
     switchDisplay(newTaskCreator);
     switchDisplay(newTaskButton);
+    inputTextarea.value = "";
 };
 
 btnCategory.addEventListener("click", (e) => {
@@ -142,25 +143,24 @@ addButton.addEventListener("click", (e) => {
     resetDisplay();
 });
 
-let datalistInput = document.getElementById("datalist")
-let categoryOptions = document.getElementById("category")
-//let optionsDatalist = docuement.getElementById("options")
 
-datalistInput.addEventListener("input", () => {
-    let inputValue = datalistInput.value.trim();
-    if (inputValue !== "") {
-      // Check if the value already exists in the datalist
-      let existingOption = datalistInput.querySelector(`option[value="${inputValue}"]`);
-      if (!existingOption) {
-        // If the value doesn't exist, create a new option and append it to the datalist
-        let newOption = document.createElement("option");
-        newOption.value = inputValue;
-        datalistInput.appendChild(newOption);
-      }
-      // Set the value of the input element to the textarea value
-      categoryInput.value = inputValue;
+
+let categoryInput = document.getElementById("category");
+let datalistOptions = document.getElementById("datalist");
+
+categoryInput.addEventListener("change", function() {
+  let inputValue = categoryInput.value.trim();
+  if (inputValue !== "") {
+    // Check if the value already exists in the datalist
+    let existingOption = datalistOptions.querySelector(`option[value="${inputValue}"]`);
+    if (!existingOption) {
+      // If the value doesn't exist, create a new option and append it to the datalist
+      let newOption = document.createElement("option");
+      newOption.value = inputValue;
+      datalistOptions.appendChild(newOption);
     }
-  });
+  }
+});
 
 
     let lists = [{
