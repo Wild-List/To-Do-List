@@ -226,7 +226,7 @@ nav {
 }
 
 .btn-new-task {
-    font-size: 13px;
+  font-size: 13px;
   color: white;
   margin: 20px 0 15px 0;
   padding: 13px;
@@ -238,6 +238,7 @@ nav {
 
 .btn-new-task:hover {
   background-color: rgba(48, 65, 69, 0.6);
+  cursor: pointer;
 }
 
 .btn-new-task:active {
@@ -253,7 +254,7 @@ nav {
 }
 
 .input-new-task {
-    color: white;
+  color: white;
   background: transparent;
   border: none;
   margin: 15px 0 0 15px;
@@ -267,12 +268,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.input-details {
-  display: none;
-}
 
 .details-container {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 10px 10px;
 }
 
@@ -289,6 +288,7 @@ nav {
 
 .btn-details:hover {
   background-color: rgba(186, 186, 186, 0.38);
+  cursor: pointer;
 }
 
 .btn-details span {
@@ -299,30 +299,33 @@ nav {
   height: 16px;
 }
 
-.visible {
-  display: block;
-}
-
 #btn-validate {
-    color: white;
+  color: white;
   width: 45px;
   min-height: 25px;
   margin: 10px 3px 10px 3px;
   border-radius: 5px;
   border: solid 1px rgba(145, 255, 93, 0.27);
   background-color: #445e63;
+  pointer-events: auto;
 }
 
 #btn-validate:hover {
     background-color: #2b4831;
+    cursor: pointer;
 }
 
 #btn-validate:active {
     background-color: #1f3624;
 }
 
+#btn-validate:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 #btn-cancel {
-    color: white;
+  color: white;
   width: 45px;
   min-height: 25px;
   margin: 10px 3px 10px 3px;
@@ -337,8 +340,19 @@ nav {
 
 #btn-cancel:hover {
     background-color: rgba(117, 0, 0, 0.719);
+    cursor: pointer;
 }
 
 .btn-validate-cancel {
   margin: auto 10px auto auto;
+}
+
+.input-details {
+  max-height: 25px;
+  margin: 10px 5px 10px 5px;
+  padding: 2px;
+  border-radius: 5px;
+  backdrop-filter: blur(1px);
+  border: solid 1px #525252;
+  background-color: rgba(220, 220, 220, 0.38);
 }
