@@ -45,7 +45,7 @@ displayList(lists)
 function displayList(listOfList){
     taskList.innerHTML = ""
 
-    for(list of listOfList){
+    for(const list of listOfList){
       let newList = document.createElement("div");
       let newListDiv = document.createElement("div");
       let listTitle = document.createElement("input");
@@ -57,7 +57,7 @@ function displayList(listOfList){
       let categoryOption = document.createElement("option");
       let indexz = 0;
 
-      newList.classList.add("list");
+      newList.classList.add("list", `${list.title}`);
       newListDiv.classList.add("list-header", "flex");
       listTitle.classList.add("list-title");
       listBtn.classList.add("edit-list");
@@ -85,7 +85,6 @@ function displayList(listOfList){
       newListMenuOption.appendChild(newListMenuDelete);
       
       if(!datalistOptions.querySelector(`option[value="${list.title}"]`)){
-        console.log("blabla")
         datalistOptions.appendChild(categoryOption);
     }
 
@@ -122,10 +121,10 @@ function displayList(listOfList){
     })
       
 
-      for(task of list.tasks){
+      for(const task of list.tasks){
         let newTask = document.createElement("div");
         let taskCheckbox = document.createElement("input");
-        let taskTitle = document.createElement("p");
+        let taskTitle = document.createElement("label");
         let taskDate = document.createElement("p");
         let taskBtn = document.createElement("button");
         let newTaskMenu = document.createElement("div");
@@ -136,6 +135,7 @@ function displayList(listOfList){
         let lowPriority = document.createElement("li");
         let midPriority = document.createElement("li");
         let highPriority = document.createElement("li");
+        let counterId = Math.floor(Math.random() * 100);
 
     
         newTask.classList.add("task", "flex", `${task.priority}`);
@@ -148,6 +148,9 @@ function displayList(listOfList){
         newTaskMenuDelete.classList.add("task-menu-option-delete");
         newPriorityOption.classList.add("priority-option");
         newTask.style.zIndex = indexz--;
+        taskCheckbox.classList.add(task.priority);
+        taskCheckbox.setAttribute("name", `${task.title}${counterId}`);
+        taskTitle.setAttribute("for", `${task.title}${counterId}`);
 
     
         taskCheckbox.type = "checkbox";
@@ -236,19 +239,21 @@ function newTaskAdded(taskAdded){
         priority: taskAdded[3]
     }
 
-    for(list of lists){
-        if(list.title == taskAdded[1]){
-            list.tasks.push(taskObj)
-            break;
-        }
-        else{
-            let listObj = {
-                title: taskAdded[1],
-                tasks: [taskObj]
+    let alreadyThere = taskList.querySelector(`.${taskAdded[1]}`)
+
+    if(alreadyThere){
+        for (const list of lists) {
+            if(taskAdded[1] == list.title){
+                list.tasks.push(taskObj);
             }
-            lists.push(listObj);
-            break;
         }
+    }
+    else{
+        let listObj = {
+            title: taskAdded[1],
+            tasks: [taskObj]
+        }
+        lists.push(listObj);
     }
 
     displayList(lists)

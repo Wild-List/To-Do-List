@@ -127,20 +127,30 @@ input[type="checkbox"] {
   text-align: center;
   flex: 1;
   margin: auto auto auto 5px;
-  height: 11px;
+  height: 12px;
   border-radius: 2px;
   border: solid 1px #d9d9d9;
 }
 
-input[type="checkbox"]:checked {
-  accent-color: rgb(253, 83, 83);
+.high-priority>input[type="checkbox"]:checked {
+  accent-color: #BA4153;
+}
+
+.medium-priority>input[type="checkbox"]:checked {
+  accent-color: #C27253;
+}
+
+.low-priority>input[type="checkbox"]:checked {
+  accent-color: #4D9F60 !important;
+  color: #4D9F60 !important;
+  border: #4D9F60 !important;
+  background: #4D9F60 !important;
 }
 
 .task-name {
   flex: 7;
   font-size: 12px;
-  margin-left: 3px;
-  line-height: 6px;
+  margin: auto;
 }
 
 .task-date {
