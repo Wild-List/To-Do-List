@@ -286,6 +286,12 @@ nav {
   background-color: rgba(220, 220, 220, 0.38);
 }
 
+@media screen and (min-width: 900px) {
+  .btn-details {
+    width: 100px;
+  }
+}
+
 .btn-details:hover {
   background-color: rgba(186, 186, 186, 0.38);
   cursor: pointer;
@@ -293,6 +299,13 @@ nav {
 
 .btn-details span {
   display: none;
+}
+
+@media screen and (min-width: 900px) {
+ .btn-details span {
+  display: inline;
+  color: white;
+ }
 }
 
 .btn-details img {
