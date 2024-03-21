@@ -14,6 +14,8 @@ let inputValues = ["input-new-task", "category", "deadline", "priority"];
 let btnCategory = document.getElementById("btn-category");
 let btnDeadline = document.getElementById("btn-deadline");
 let btnPriority = document.getElementById("btn-priority");
+let categoryInput = document.getElementById("category");
+let datalistOptions = document.getElementById("datalist");
 
 
 
@@ -78,10 +80,12 @@ newTaskButton.addEventListener("click", (e) => {
     switchDisplay(newTaskButton);
 });
 
+
 function getDetailsValue() {
     // Get input values
     for (let i = 0; i < inputValues.length; ++i) {
-    getDetails[i] = document.getElementById(inputValues[i]).value;
+        let inputId = inputValues[i];
+    getDetails[inputId] = document.getElementById(inputId).value;
     };
     console.log(getDetails); // remove it later
 };
@@ -101,7 +105,6 @@ inputDetailsList.forEach(function(inputDetails) {
         });
         // Disable add button if an input is empty
         addButton.disabled = anyEmptyInput;
-        console.log("Button disabled:", addButton.disabled);
     });
 });
 
@@ -144,10 +147,6 @@ addButton.addEventListener("click", (e) => {
 });
 
 
-
-let categoryInput = document.getElementById("category");
-let datalistOptions = document.getElementById("datalist");
-
 categoryInput.addEventListener("change", function() {
   let inputValue = categoryInput.value.trim();
   if (inputValue !== "") {
@@ -161,6 +160,22 @@ categoryInput.addEventListener("change", function() {
     }
   }
 });
+
+function formatDate(dateString) {
+    // Parse the date string into a Date object
+    let dateParts = dateString.split('-');
+    let year = parseInt(dateParts[0], 10);
+    let month = parseInt(dateParts[1], 10) - 1; 
+    let day = parseInt(dateParts[2], 10);
+    let dateObject = new Date(year, month, day);
+
+    // Format the date as DD/MM
+    let formattedDay = String(dateObject.getDate()).padStart(2, '0');
+    let formattedMonth = String(dateObject.getMonth() + 1).padStart(2, '0');
+    let formattedDate = `${formattedDay}/${formattedMonth}`;
+
+    return formattedDate;
+}
 
 
     let lists = [{
