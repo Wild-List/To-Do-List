@@ -220,6 +220,24 @@ function displayList(listOfList){
             }
         })
 
+        taskCheckbox.addEventListener("change", (e) => {
+            if(taskCheckbox.checked){
+                taskTitle.style.color = "#e7e7e735";
+                taskTitle.style.textDecorationLine = "line-through";
+                taskDate.style.color = "#e7e7e735";
+                taskBtn.style.color = "#e7e7e735";
+                taskBtn.disabled = true;
+                newList.appendChild(newTask);
+            }
+            else{
+                taskTitle.style.color = "#e7e7e7";
+                taskTitle.style.textDecorationLine = "none";
+                taskDate.style.color = "#e7e7e7";
+                taskBtn.style.color = "#e7e7e7";
+                taskBtn.disabled = false;
+            }
+        })
+
 
         newTaskMenuDelete.addEventListener('click', (e) => {
             e.target.closest(".task").remove()
