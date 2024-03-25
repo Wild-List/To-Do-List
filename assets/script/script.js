@@ -432,7 +432,7 @@ inputDetailsList.forEach(function(inputDetails) {
     });
 });
 
-addButton.addEventListener("mouseover", function() {
+addButton.addEventListener("mouseover", () => {
     let emptyFields = [];
     inputValues.forEach(function(inputId) {
         const inputValue = document.getElementById(inputId).value;
@@ -448,7 +448,9 @@ addButton.addEventListener("mouseover", function() {
     }
 });
 
-addButton.addEventListener("touchstart", function() {
+
+
+addButton.addEventListener("touchstart", () => {
     let emptyFields = [];
     inputValues.forEach(function(inputId) {
         const inputValue = document.getElementById(inputId).value;
@@ -484,6 +486,7 @@ category.addEventListener("change", () => {
     }
   }
 });
+
 
 
 // -----------------------------------------------------------------
