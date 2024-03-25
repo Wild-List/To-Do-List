@@ -429,7 +429,6 @@ inputDetailsList.forEach(function(inputDetails) {
         });
         // Disable add button if an input is empty
         addButton.disabled = anyEmptyInput;
-        console.log("Button disabled:", addButton.disabled);
     });
 });
 
@@ -444,7 +443,7 @@ addButton.addEventListener("mouseover", function() {
 
     if (emptyFields.length > 0) {
         // Display tooltip indicating empty fields
-        const emptyFieldsMessage = "Please fill out the following fields: " + emptyFields.join(", ");
+        const emptyFieldsMessage = "Merci de remplir les champs suivants: " + emptyFields.join(", ");
         displayTooltip(emptyFieldsMessage);
     }
 });
@@ -460,7 +459,7 @@ addButton.addEventListener("touchstart", function() {
 
     if (emptyFields.length > 0) {
         // Display tooltip indicating empty fields
-        const emptyFieldsMessage = "Please fill out the following fields: " + emptyFields.join(", ");
+        const emptyFieldsMessage = "Merci de remplir les champs suivants: " + emptyFields.join(", ");
         displayTooltip(emptyFieldsMessage);
     }
 });
@@ -469,12 +468,11 @@ addButton.addEventListener("click", (e) => {
     e.preventDefault();
     getDetailsValue();
     resetDisplay();
+    addButton.disabled = true;
 });
 
-let categoryInput = document.getElementById("category");
-
-categoryInput.addEventListener("change", function() {
-  let inputValue = categoryInput.value.trim();
+category.addEventListener("change", () => {
+  let inputValue = category.value.trim();
   if (inputValue !== "") {
     // Check if the value already exists in the datalist
     let existingOption = datalistOptions.querySelector(`option[value="${inputValue}"]`);

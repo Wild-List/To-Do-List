@@ -70,13 +70,23 @@
               </div>
               <div>
                 <label for="deadline"></label>
-                <input
+                <!-- <input
                   name="deadline"
                   type="date"
                   id="deadline"
                   class="input-details"
                   value=""
                   hidden
+                /> -->
+                <input
+                name="deadline"
+                id="deadline"
+                placeholder="Deadline"
+                class="input-details"
+                type="text"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                hidden
                 />
                 <button class="btn-details" id="btn-deadline">
                   <span>Deadline</span>
