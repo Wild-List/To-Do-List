@@ -18,7 +18,7 @@
             <img src="assets/media/logo.svg" alt="" />
             <img src="assets/media/Todo.svg" alt="" />
           </div>
-
+          
           <!-- Partie Profil -->
           <div class="nav-right">
             <img src="assets/media/login.svg" alt="" />
@@ -36,12 +36,13 @@
           <div class="progress-bar">
             <div class="progress"></div>
           </div>
-          <ul>
-            <li>go for a walk</li>
-            <li class="active">contact a friend</li>
-            <li class="active">medidate</li>
+          <ul class="daylies-task">
+            <li class="daylies-toggle">go for a walk</li>
+            <li class="daylies-toggle">contact a friend</li>
+            <li class="daylies-toggle">medidate</li>
           </ul>
-          <p>^</p>
+         <p class="toggle"><i class="fa-solid fa-chevron-up icon-daylies"></i></p>
+          <!-- <p><i class="fa-solid fa-chevron-up icon-daylies"></i></p> -->
         </div>
 
         <!-- Ajout de liste/tache -->
@@ -105,27 +106,59 @@
         <!-- Container listes -->
         <div class="task-list">
           <!-- Liste et tache -->
-          <div class="list">
+          <!-- <div class="list">
             <div class="list-header flex">
               <h3 class="list-title">Ménage</h3>
               <button class="edit-list">···</button>
+              <div class="list-menu" hidden>
+                <ul class="list-menu-option flex">
+                  <li class="list-menu-option-rename">Renommer</li>
+                  <li class="list-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
             <div class="task medium-priority flex">
               <input type="checkbox" />
               <p class="task-name">Faire la vaisselle</p>
               <p class="task-date">28/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu">
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+                <ul class="priority-option">
+                  <li>Basse</li>
+                  <li>Haute</li>
+                  <li>Moyenne</li>
+                </ul>
+              </div>
             </div>
             <div class="task low-priority flex">
               <input type="checkbox" />
               <p class="task-name">Arroser les plantes</p>
               <p class="task-date">22/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu" hidden>
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
             <div class="task high-priority flex">
               <input type="checkbox" />
               <p class="task-name">Laver la voiture</p>
               <p class="task-date">17/03</p>
+              <button class="edit-task">···</button>
+              <div class="task-menu" hidden>
+                <ul class="task-menu-option">
+                  <li class="task-menu-option-priority">Priorité</li>
+                  <li class="task-menu-option-delete">Supprimer</li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </main>
 
