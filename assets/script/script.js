@@ -315,28 +315,22 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
+function displayDateTime() {
+    let joursSemaine = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    let mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    let date = new Date();
 
-// for(let i = 0; i < listNumber; i++){
-//     console.log(listMenu[i].hidden)
-//     document.addEventListener("click", (e) => {
-//         if(listMenu[i].hidden == false && (e.target != listMenu[i] || e.target != listMenuOptions[i])){
-//             console.log("he")
-//             listMenu[i].hidden = true;
-//             listBtn[i].hidden = false;
-//         }
-//     })
-// }
+    let jourSemaine = joursSemaine[date.getDay()];
+    let jour = date.getDate();
+    let moisActuel = mois[date.getMonth()];
+    let heure = date.getHours();
+    let minutes = date.getMinutes();
 
-// todoBody.addEventListener("contextmenu", (e) => {
-//     e.preventDefault()
-//     console.log(e.target)
-//     if(e.target.classList.contains(".list")){
-//         console.log("Je suis une liste");
-//     }
-//     if(e.target.classList.contains(".task")){
-//         console.log("Je suis une task");
-//     }
-// })
+    document.querySelector(".nav-desktop-date").textContent = `${jourSemaine} ${jour} ${moisActuel}, ${heure}:${minutes}`;
+}
+
+displayDateTime()
+setInterval(displayDateTime(), 1000);
 
 
 // ---------------------------------------------------------------
@@ -420,13 +414,6 @@ newTaskButton.addEventListener("click", (e) => {
     switchDisplay(newTaskButton);
 });
 
-// function getDetailsValue() {
-//     // Get input values
-//     for (let i = 0; i < inputValues.length; ++i) {
-//     getDetails[i] = document.getElementById(inputValues[i]).value;
-//     };
-//     return getDetails;
-// };
 
 function displayTooltip(message) {
     addButton.title = message;  
@@ -511,6 +498,7 @@ let dayliesStripe = document.querySelectorAll(".daylies-toggle");
 let btn = document.querySelector(".toggle");
 let icon = btn.querySelector(".fa-chevron-up");
 let progressBar = document.querySelector(".progress");
+let iconPlus = document.querySelector(".plus-quoti");
 
 dayliesBar.addEventListener("click", () => {
   dayliesTask.hidden
@@ -545,3 +533,38 @@ function updateProgress() {
   const progressPercentage = (completedTasks / totalTasks) * 100;
   progressBar.style.width = progressPercentage + "%";
 }
+
+// ------------- AJOUT DES TACHES A FAIRE QUOTIDIENNEMENT --------------- //
+
+// Fonction pour ajouter un nouveau li lorsqu'on clique sur le bouton +
+iconPlus.addEventListener("click", function () {
+  let newLi = document.createElement("li");
+  newLi.className = "daylies-toggle";
+  newLi.setAttribute("contentEditable", "true");
+  newLi.addEventListener("click", (e) => {
+    if (e.target.classList.contains("completed")) {
+      e.target.classList.remove("completed");
+    } else {
+      e.target.classList.add("completed");
+    }
+    updateProgress();
+  });
+  dayliesTask.appendChild(newLi);
+  newLi.focus();
+
+  // Ajouter un gestionnaire d'événement pour intercepter la pression de la touche "Enter"
+  newLi.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Empêcher le comportement par défaut de la touche "Enter" (saut de ligne)
+      newLi.removeAttribute("contentEditable"); // Désactiver l'édition une fois que la touche "Enter" est pressée
+      updateProgress();
+    }
+  });
+});
+
+// Fonction pour ajouter une classe active lorsque l'utilisateur clique sur un li
+dayliesTask.addEventListener("click", function (event) {
+  if (event.target.classList.contains("daylies-toggle")) {
+    event.target.classList.toggle("active");
+  }
+});

@@ -218,6 +218,10 @@ input[type="checkbox"] {
   padding: 4px;
 }
 
+.list-menu-option li{
+  padding: 4px;
+}
+
 .priority-option li:hover{
   color: black;
   background-color: #e7e7e7;
@@ -225,6 +229,12 @@ input[type="checkbox"] {
 }
 
 .task-menu-option li:hover{
+  color: black;
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+.list-menu-option li:hover{
   color: black;
   background-color: #e7e7e7;
   cursor: pointer;
@@ -281,6 +291,7 @@ nav {
 }
 
 .daylies {
+  position: relative;
   width: 60%;
   margin: auto;
   padding: 5px 20px 0 20px;
@@ -288,6 +299,32 @@ nav {
   border: solid 1px rgba(222, 243, 255, 0.2);
   background-color: rgba(222, 243, 255, 0.1);
   
+}
+
+.plus-quoti {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  margin-top: 13px;
+  -webkit-text-stroke: 1px #e7e7e7;
+  font-size: 13px;
+  color: #e7e7e7;
+}
+
+.container-input-daylies {
+  position: a;
+}
+
+.btn-new-daylies {
+  width: 15%;
+  font-size: 13px;
+  color: white;
+  margin: 20px 0 15px 0;
+  padding: 13px;
+  border: 0px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+  background-color: rgba(68, 94, 99, 0.6);
 }
 
 .progress-bar {
@@ -325,6 +362,7 @@ nav {
   margin-bottom: 10px;
   font-size: 14px;
   font-family: "Inter";
+  margin-left: 5px;
 }
 
 .daylies .completed {
@@ -351,6 +389,13 @@ nav {
   color: #e7e7e7;
   margin: 0;
   margin-top: 7px;
+}
+
+.daylies-toggle:focus {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* LANDRY */
@@ -396,7 +441,7 @@ nav {
   color: transparent;
 }
 
-.plus-icon{
+.plus{
   -webkit-text-stroke: 1px white;
   font-size: 13px;
   margin-right: 10px;
@@ -417,6 +462,7 @@ border: 0px;
 border-radius: 15px;
 box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
 background-color: rgba(68, 94, 99, 0.6);
+font-family: "Andika", sans-serif;
 }
 
 .btn-new-task:hover {
@@ -614,8 +660,6 @@ select{
     width: 15px;
   }
 
-
-
   main{
     display: flex;
     margin-top: 40px;
@@ -657,6 +701,14 @@ select{
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.19);
   }
 
+  .plus-quoti {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    margin-top: 33px;
+    font-size: 16px;
+  }
+
   .daylies-task{
     width: 85%;
     margin: 30px auto auto auto;
@@ -666,6 +718,7 @@ select{
 
   .daylies ul li{
     margin-bottom: 15px;
+    font-size: 16px;
     }
 
   .toggle{
@@ -795,9 +848,7 @@ select{
   }
 
   .bd-background{
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
     background-image: linear-gradient(to bottom, rgba(60, 67, 92, 0.522) 38%, #2f3a5f 82%);
-    border: 1px solid rgb(80, 80, 80);
     border-radius: 25px;
     margin-top: 4px;
     margin-bottom: 7px;
