@@ -316,8 +316,7 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
-
-setInterval(() => {
+function displayTime(){
     let joursSemaine = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     let mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
     let date = new Date();
@@ -328,8 +327,13 @@ setInterval(() => {
     let heure = date.getHours();
     let minutes = date.getMinutes();
 
-    desktopDate.textContent = `${jourSemaine} ${jour} ${moisActuel}, ${heure}:${minutes}`;
-}, 1000);
+    let minutesFormat = (minutes < 10 ? '0' : '') + minutes;
+
+    desktopDate.textContent = `${jourSemaine} ${jour} ${moisActuel}, ${heure}:${minutesFormat}`;
+}
+
+displayTime()
+setInterval(displayTime, 1000);
 
 
 // ---------------------------------------------------------------
