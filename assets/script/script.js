@@ -6,6 +6,7 @@ let taskBtn = document.querySelectorAll(".edit-task");
 let taskMenu = document.querySelectorAll(".task-menu");
 let taskMenuOptions = document.querySelectorAll(".task-menu-option");
 let datalistOptions = document.getElementById("datalist");
+let desktopDate = document.querySelector(".nav-desktop-date");
 
 let listNumber = 0;
 let indexList = 100;
@@ -315,7 +316,8 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
-function displayDateTime() {
+
+setInterval(() => {
     let joursSemaine = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     let mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
     let date = new Date();
@@ -326,11 +328,8 @@ function displayDateTime() {
     let heure = date.getHours();
     let minutes = date.getMinutes();
 
-    document.querySelector(".nav-desktop-date").textContent = `${jourSemaine} ${jour} ${moisActuel}, ${heure}:${minutes}`;
-}
-
-displayDateTime()
-setInterval(displayDateTime(), 1000);
+    desktopDate.textContent = `${jourSemaine} ${jour} ${moisActuel}, ${heure}:${minutes}`;
+}, 1000);
 
 
 // ---------------------------------------------------------------
