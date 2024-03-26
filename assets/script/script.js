@@ -103,6 +103,13 @@ function displayList(listOfList){
         newListMenu.hidden = true;
     })
 
+    window.addEventListener("click", (e) => {
+        if(!e.target.classList.contains("list-menu-option-rename") && !e.target.classList.contains("list-menu-option-delete") && !e.target.classList.contains("edit-list")){
+            newListMenu.hidden = true;
+            listBtn.hidden = false;
+        }
+    })
+
     newListMenuRename.addEventListener('click', (e) => {
         newListMenu.hidden = true;
         let currentTitle = e.target.closest(".list-header").firstChild;
@@ -191,6 +198,13 @@ function displayList(listOfList){
             }
             else{
                 newTaskMenu.hidden = true;
+            }
+        })
+
+        window.addEventListener("click", (e) => {
+            if(!e.target.classList.contains("task-menu-option-priority") && !e.target.classList.contains("task-menu-option-delete") && !e.target.classList.contains("edit-task")){
+                newTaskMenu.hidden = true;
+                newPriorityOption.hidden = true;
             }
         })
 
@@ -300,12 +314,6 @@ function formatDate(dateString) {
 
     return formattedDate;
 }
-
-taskList.addEventListener("click", (e) => {
-    if(e.target.classList.contains(".list-menu")){
-        console.log(e.target)
-    }
-})
 
 
 // for(let i = 0; i < listNumber; i++){
