@@ -70,8 +70,8 @@ function displayList(listOfList){
 
       listTitle.value = list.title;
       listBtn.textContent = "···";
-      newListMenuRename.textContent = "Rename";
-      newListMenuDelete.textContent = "Delete";
+      newListMenuRename.textContent = "Renommer";
+      newListMenuDelete.textContent = "Supprimer";
       newListMenu.hidden = true;
       newList.style.zIndex = indexList--;
       categoryOption.value = list.title;
@@ -157,13 +157,13 @@ function displayList(listOfList){
         taskBtn.textContent = "···";
         taskTitle.textContent = task.title;
         taskDate.textContent = task.date;
-        newTaskMenuPriority.textContent = "Priority";
-        newTaskMenuDelete.textContent = "Delete";
+        newTaskMenuPriority.textContent = "Priorité";
+        newTaskMenuDelete.textContent = "Supprimer";
         newTaskMenu.hidden = true;
         newPriorityOption.hidden = true;
-        highPriority.textContent = "High";
-        midPriority.textContent = "Medium";
-        lowPriority.textContent = "Low";
+        highPriority.textContent = "Haute";
+        midPriority.textContent = "Moyenne";
+        lowPriority.textContent = "Basse";
 
     
         newTask.appendChild(taskCheckbox);
@@ -196,21 +196,21 @@ function displayList(listOfList){
 
         newPriorityOption.addEventListener('click', (e) => {
             switch (e.target.textContent) {
-                case "Low":
+                case "Basse":
                     e.target.closest(".task").className = "task", "flex", "low-priority";
                     e.target.closest(".task").classList.add("task", "flex", "low-priority")
                     newTaskMenu.hidden = true;
                     newPriorityOption.hidden = true;
                     break;
 
-                case "Medium":
+                case "Moyenne":
                     e.target.closest(".task").className = "task", "flex", "medium-priority";
                     e.target.closest(".task").classList.add("task", "flex", "medium-priority")
                     newTaskMenu.hidden = true;
                     newPriorityOption.hidden = true;
                     break
 
-                case "High":
+                case "Haute":
                     e.target.closest(".task").className = "task", "flex", "high-priority";
                     e.target.closest(".task").classList.add("task", "flex", "high-priority")
                     newTaskMenu.hidden = true;
@@ -301,6 +301,13 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
+taskList.addEventListener("click", (e) => {
+    if(e.target.classList.contains(".list-menu")){
+        console.log(e.target)
+    }
+})
+
+
 // for(let i = 0; i < listNumber; i++){
 //     console.log(listMenu[i].hidden)
 //     document.addEventListener("click", (e) => {
@@ -342,7 +349,6 @@ let inputValues = ["input-new-task", "category", "deadline", "priority"];
 let btnCategory = document.getElementById("btn-category");
 let btnDeadline = document.getElementById("btn-deadline");
 let btnPriority = document.getElementById("btn-priority");
-
 
 
 function switchDisplay(element) {
