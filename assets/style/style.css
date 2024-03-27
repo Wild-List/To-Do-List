@@ -146,7 +146,6 @@ input[type="checkbox"] {
 
 .low-priority>input[type="checkbox"]:checked {
   accent-color: #4D9F60 !important;
-  color: #4D9F60 !important;
   border: #4D9F60 !important;
   background: #4D9F60 !important;
 }
@@ -309,10 +308,6 @@ nav {
   -webkit-text-stroke: 1px #e7e7e7;
   font-size: 13px;
   color: #e7e7e7;
-}
-
-.container-input-daylies {
-  position: a;
 }
 
 .btn-new-daylies {
@@ -541,8 +536,7 @@ margin: 10px 3px 10px 3px;
 border-radius: 5px;
 border: solid 1px rgba(145, 255, 93, 0.27);
 background-color: #445e63;
-pointer-events: auto;
-font-size: 18px;
+ font-size: 18px;
 }
 
 #btn-validate:hover {

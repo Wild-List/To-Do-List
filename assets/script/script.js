@@ -333,7 +333,7 @@ function displayTime(){
 }
 
 displayTime()
-setInterval(displayTime, 1000);
+setInterval(displayTime, 60000);
 
 
 // ---------------------------------------------------------------
@@ -517,7 +517,7 @@ btn.addEventListener("click", () => {
   }
 });
 
-for (stripe of dayliesStripe) {
+for (const stripe of dayliesStripe) {
   stripe.addEventListener("click", (e) => {
     if (e.target.classList.contains("completed")) {
       e.target.classList.remove("completed");
@@ -541,25 +541,30 @@ function updateProgress() {
 
 // Fonction pour ajouter un nouveau li lorsqu'on clique sur le bouton +
 iconPlus.addEventListener("click", function () {
-  let newLi = document.createElement("li");
-  newLi.className = "daylies-toggle";
-  newLi.setAttribute("contentEditable", "true");
-  newLi.addEventListener("click", (e) => {
-    if (e.target.classList.contains("completed")) {
-      e.target.classList.remove("completed");
-    } else {
-      e.target.classList.add("completed");
+    if(dayliesTask.lastChild.textContent != "" &&  dayliesTask.lastChild.textContent != null){
+        let newLi = document.createElement("li");
+        newLi.className = "daylies-toggle";
+        newLi.setAttribute("contentEditable", "true");
+        newLi.addEventListener("click", (e) => {
+        if (e.target.classList.contains("completed")) {
+        e.target.classList.remove("completed");
+        } else {
+        e.target.classList.add("completed");
+        }
+        updateProgress();
+    });
+    dayliesTask.appendChild(newLi); 
+    newLi.focus();
     }
-    updateProgress();
-  });
-  dayliesTask.appendChild(newLi);
-  newLi.focus();
+    else{
+        dayliesTask.lastChild.focus();
+    }
 
   // Ajouter un gestionnaire d'événement pour intercepter la pression de la touche "Enter"
-  newLi.addEventListener("keypress", function (event) {
+  dayliesTask.lastChild.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       event.preventDefault(); // Empêcher le comportement par défaut de la touche "Enter" (saut de ligne)
-      newLi.removeAttribute("contentEditable"); // Désactiver l'édition une fois que la touche "Enter" est pressée
+      event.target.removeAttribute("contentEditable"); // Désactiver l'édition une fois que la touche "Enter" est pressée
       updateProgress();
     }
   });

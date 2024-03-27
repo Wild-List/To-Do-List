@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild-List</title>
-    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/style.css">
   </head>
   <body>
     <!-- Container visual pour effet application -->
@@ -14,17 +14,17 @@
         <nav>
           <!-- Partie Logo -->
           <div class="nav-left">
-            <img src="assets/media/logo.svg" alt="" />
-            <img src="assets/media/Todo.svg" alt="" />
+            <img src="assets/media/logo.svg" alt="Logo wild-list">
+            <img src="assets/media/Todo.svg" alt="Titre de la page manuscrit">
           </div>
           
           <!-- Partie Profil -->
           <div class="nav-right">
             <p class="nav-desktop-date" hidden>Lundi 26 Mars, 11:56</p>
-            <img src="assets/media/login.svg" alt="" />
+            <img src="assets/media/login.svg" alt="Photo utilisateur">
           </div>
           <div class="online">
-            <img src="assets/media/Ellipse_8.svg" alt="" />
+            <img src="assets/media/Ellipse_8.svg" alt="Voyant 'en ligne'">
           </div>
         </nav>
       </header>
@@ -63,18 +63,18 @@
               placeholder="Nouvelle tâche"
               id="input-new-task"
               class="input-new-task"
-            />
+            >
             <hr class="line">
             <form class="details-container">
               <div>
                 <label for="category"></label>
-                <input type="text" id="category" class="input-details" list="datalist" hidden/>
+                <input type="text" id="category" class="input-details" list="datalist" hidden>
                 <datalist id="datalist">
                   <option value="">Category</option>
                 </datalist>
                 <button class="btn-details" id="btn-category">
                   <span>Categorie</span>
-                  <img src="assets\media\label_1f3f7-fe0f.png" />
+                  <img src="assets/media/label_1f3f7-fe0f.png" alt="Icone de label pour bouton catégorie">
                 </button>
               </div>
               <div>
@@ -86,10 +86,10 @@
                   class="input-details"
                   value=""
                   hidden
-                />
+                >
                 <button class="btn-details" id="btn-deadline">
                   <span>Deadline</span>
-                  <img src="assets\media\calendar_1f4c5.png" />
+                  <img src="assets/media/calendar_1f4c5.png" alt="Icone calendrier">
                 </button>
               </div>
               <div>
@@ -102,7 +102,7 @@
                 </select>
                 <button class="btn-details" id="btn-priority">
                   <span>Priorité</span>
-                  <img src="assets\media\warning_26a0-fe0f.png" />
+                  <img src="assets/media/warning_26a0-fe0f.png" alt="Icone priorité">
                 </button>
               </div>
               <div class="btn-validate-cancel">
