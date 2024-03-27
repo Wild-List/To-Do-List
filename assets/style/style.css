@@ -581,11 +581,12 @@ background-color: rgba(167, 0, 0, 0.57);
 }
 
 .btn-validate-cancel {
-margin: auto 10px auto auto;
+  display: flex;
+  margin: auto 10px auto auto;
 }
 
 .input-details {
-max-width: 69px;
+max-width: 85px;
 margin: 10px 5px 10px 5px;
 padding: 2px;
 border-radius: 5px;

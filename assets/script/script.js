@@ -19,24 +19,36 @@ let lists = [{
     },
     {
         title: "Pommes",
-        priority: "low-priority",
-        date: "22/02"
-    },
-    {
-        title: "Primeur",
         priority: "medium-priority",
-        date: "28/02"
+        date: "22/02"
     }]
 }, {
     title: "Etudes",
     tasks: [{
-        title: "Reviser thales",
+        title: "Thése",
         priority: "high-priority",
         date: "17/03"
     },
     {
         title: "Rédaction",
         priority: "low-priority",
+        date: "09/04"
+    },
+    {
+        title: "Dossier",
+        priority: "medium-priority",
+        date: "09/04"
+    }]
+}, {
+    title: "Projet 1",
+    tasks: [{
+        title: "Faire la présentation",
+        priority: "high-priority",
+        date: "17/03"
+    },
+    {
+        title: "Effectuer des tests",
+        priority: "medium-priority",
         date: "09/04"
     }]
 }];
@@ -57,8 +69,9 @@ function displayList(listOfList){
       let newListMenuDelete = document.createElement("li");
       let categoryOption = document.createElement("option");
       let indexz = 0;
+      let identification = Math.floor(Math.random() * 983939);
 
-      newList.classList.add("list", `${list.title}`);
+      newList.classList.add("list", `${identification}`);
       newListDiv.classList.add("list-header", "flex");
       listTitle.classList.add("list-title");
       listBtn.classList.add("edit-list");
