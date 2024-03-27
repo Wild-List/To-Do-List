@@ -40,7 +40,7 @@ let lists = [{
         date: "09/04"
     }]
 }, {
-    title: "Projet 1",
+    title: "Projet",
     tasks: [{
         title: "Faire la présentation",
         priority: "high-priority",
@@ -69,9 +69,8 @@ function displayList(listOfList){
       let newListMenuDelete = document.createElement("li");
       let categoryOption = document.createElement("option");
       let indexz = 0;
-      let identification = Math.floor(Math.random() * 983939);
 
-      newList.classList.add("list", `${identification}`);
+      newList.classList.add("list", `${list.title}`);
       newListDiv.classList.add("list-header", "flex");
       listTitle.classList.add("list-title");
       listBtn.classList.add("edit-list");

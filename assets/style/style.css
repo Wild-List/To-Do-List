@@ -360,6 +360,10 @@ nav {
   margin-left: 5px;
 }
 
+.daylies ul li:hover {
+  cursor: pointer;
+}
+
 .daylies .completed {
   color: rgba(220, 220, 220, 0.29);
   -webkit-text-decoration-line: line-through;
