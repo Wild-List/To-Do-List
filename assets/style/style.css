@@ -599,7 +599,7 @@ flex-wrap: nowrap;
 
 input[type="date"]{
   padding: 1px 6px;
-  max-width: 18px;
+  max-width: 17px;
 }
 
 select{
